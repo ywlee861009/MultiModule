@@ -1,16 +1,12 @@
 package com.example.multimodule
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelStore
-import androidx.lifecycle.viewmodel.viewModelFactory
+import androidx.databinding.DataBindingUtil
+import com.example.multimodule.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 /**
  * Main
@@ -18,10 +14,14 @@ import retrofit2.Response
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private val viewModel: MainViewModel by viewModels()
+    private val binding: ActivityMainBinding by lazy {
+        DataBindingUtil.setContentView(this, R.layout.activity_main)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        binding.recyclerView.adapter = GithubAdapter()
 
         viewModel.getRepo()
         viewModel.error.observe(this) {
@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         viewModel.repos.observe(this) {
+            (binding.recyclerView.adapter as? GithubAdapter)?.submitList(it)
         }
     }
 }

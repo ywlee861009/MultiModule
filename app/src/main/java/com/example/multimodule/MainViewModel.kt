@@ -3,7 +3,12 @@ package com.example.multimodule
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -27,20 +32,15 @@ class MainViewModel @Inject constructor(): ViewModel() {
      * github repo get
      */
     fun getRepo() {
-        GithubClient.getApi().getRepos("ywlee861009")
-            .enqueue(object: Callback<List<GithubRepo>> {
-                override fun onResponse(
-                    call: Call<List<GithubRepo>>,
-                    response: Response<List<GithubRepo>>
-                ) {
-                    response.body()?.let {
-                        _repos.value = it
-                    }
-                }
-
-                override fun onFailure(call: Call<List<GithubRepo>>, t: Throwable) {
-                    _error.value = t.toString()
-                }
-            })
+        viewModelScope.launch {
+            flow {
+                emit(GithubClient.getApi().getRepos("ywlee861009"))
+            }.catch {t ->
+                _error.postValue(t.toString())
+            }
+            .collect { response ->
+                _repos.postValue(response)
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
 package com.example.multimodule
 
+import kotlinx.coroutines.flow.Flow
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -9,5 +10,5 @@ import retrofit2.http.Path
  */
 interface GithubService {
     @GET("users/{owner}/repos")
-    fun getRepos(@Path("owner") owner: String): Call<List<GithubRepo>>
+    suspend fun getRepos(@Path("owner") owner: String): List<GithubRepo>
 }

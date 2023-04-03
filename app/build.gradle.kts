@@ -36,7 +36,7 @@ android {
         correctErrorTypes = true
     }
     dataBinding {
-        isEnabled = true
+        enable = true
     }
 }
 

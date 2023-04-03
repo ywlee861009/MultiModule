@@ -27,6 +27,7 @@ object ApiModule {
     fun provideOkHttpClient(): OkHttpClient {
         val okHttpClient = OkHttpClient.Builder()
 
+        // test
         if (BuildConfig.DEBUG)
             HttpLoggingInterceptor().apply {
                 setLevel(HttpLoggingInterceptor.Level.BODY)

@@ -7,14 +7,14 @@ plugins {
 
 android {
     namespace= "com.example.multimodule"
-    compileSdk = 33
+    compileSdk = AppConfig.COMPILE_SDK
 
     defaultConfig {
         applicationId = "com.example.multimodule"
-        minSdk = 24
-        targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
+        minSdk = AppConfig.MIN_SDK
+        targetSdk = AppConfig.TARGET_SDK
+        versionCode = AppConfig.VERSION_CODE
+        versionName = AppConfig.VERSION_NAME
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -41,21 +41,21 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.activity:activity-ktx:1.7.0")
-    implementation("androidx.fragment:fragment-ktx:1.5.6")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.8.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation(Libraries.KTX)
+    implementation(Libraries.ACTIVITY_KTX)
+    implementation(Libraries.FRAGMENT_KTX)
+    implementation(Libraries.APP_COMPAT)
+    implementation(Libraries.MATERIAL)
+    implementation(Libraries.CONSTRAINT_LAYOUT)
+    testImplementation(Libraries.J_UNIT)
+    androidTestImplementation(Libraries.J_UNIT_EXT)
+    androidTestImplementation(Libraries.ESPRESSO_CORE)
 
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
+    implementation(Libraries.RETROFIT)
+    implementation(Libraries.CONVERTOR_GSON)
+    implementation(Libraries.LOGGING_INTERCEPTOR)
 
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-compiler:2.44")
-    kapt("androidx.hilt:hilt-compiler:1.0.0")
+    implementation(Libraries.HILT_ANDROID)
+    kapt(Libraries.HILT_COMPILER)
+    kapt(Libraries.HILT_COMPILER_ANDROID_X)
 }

@@ -38,3 +38,6 @@ object Libraries {
     const val HILT_COMPILER_ANDROID_X = "androidx.hilt:hilt-compiler:${Versions.HILT_COMPILER}"
 }
 
+object ClassPath {
+    const val HILT = "com.google.dagger:hilt-android-gradle-plugin:${Versions.HILT}"
+}

@@ -1,5 +1,6 @@
-package com.example.multimodule
+package com.example.multimodule.data.github
 
+import com.example.multimodule.Const
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -9,15 +10,13 @@ import retrofit2.converter.gson.GsonConverterFactory
  */
 class GithubClient {
     companion object {
-        private const val BASE_URL = "https://api.github.com"
-
         /**
          * github service client 생성
          *
          * @return [GithubService]
          */
         fun getApi(): GithubService = Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(Const.API_BASE_URL)
             .client(OkHttpClient())
             .addConverterFactory(GsonConverterFactory.create())
             .build()

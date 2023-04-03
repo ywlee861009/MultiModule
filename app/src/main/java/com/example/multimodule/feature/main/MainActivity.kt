@@ -1,10 +1,12 @@
-package com.example.multimodule
+package com.example.multimodule.feature.main
 
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.example.multimodule.feature.main.adapter.GithubAdapter
+import com.example.multimodule.R
 import com.example.multimodule.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 

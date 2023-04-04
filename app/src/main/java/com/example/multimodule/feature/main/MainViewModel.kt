@@ -4,8 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.multimodule.data.GithubRepository
-import com.example.multimodule.data.github.response.GithubResponse
 import com.example.multimodule.domain.GetGithubRepositoryUseCase
 import com.example.multimodule.domain.entity.GithubEntity
 import dagger.hilt.android.lifecycle.HiltViewModel

@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.multimodule.data.GithubRepository
 import com.example.multimodule.data.github.response.GithubResponse
+import com.example.multimodule.domain.GetGithubRepositoryUseCase
 import com.example.multimodule.domain.entity.GithubEntity
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.catch
@@ -17,7 +18,7 @@ import javax.inject.Inject
  */
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val githubRepository: GithubRepository
+    private val getGithubRepositoryUseCase: GetGithubRepositoryUseCase
 ): ViewModel() {
 
     private val _error = MutableLiveData<String>()
@@ -33,7 +34,7 @@ class MainViewModel @Inject constructor(
      */
     fun getRepo() {
         viewModelScope.launch {
-            githubRepository.getRepos("ywlee861009")
+            getGithubRepositoryUseCase.getRepo("ywlee861009")
                 .catch {t ->
                     _error.postValue(t.toString())
                 }

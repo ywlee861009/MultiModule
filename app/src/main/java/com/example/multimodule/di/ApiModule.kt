@@ -1,4 +1,4 @@
-package com.example.multimodule.data
+package com.example.multimodule.di
 
 import com.example.multimodule.BuildConfig
 import com.example.multimodule.Const

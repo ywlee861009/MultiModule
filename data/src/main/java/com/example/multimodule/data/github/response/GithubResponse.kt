@@ -1,6 +1,5 @@
 package com.example.multimodule.data.github.response
 
-import com.example.multimodule.domain.entity.GithubEntity
 import com.google.gson.annotations.SerializedName
 
 /**
@@ -16,15 +15,3 @@ data class GithubResponse(
     @SerializedName("html_url")
     val url: String? = null
 )
-
-/**
- * Response > Entity 로 변환
- */
-fun Iterable<GithubResponse>.toEntities() = map {
-        GithubEntity(
-            it.name ?: "",
-            it.id ?: "",
-            it.date ?: "",
-            it.url ?: ""
-        )
-    }

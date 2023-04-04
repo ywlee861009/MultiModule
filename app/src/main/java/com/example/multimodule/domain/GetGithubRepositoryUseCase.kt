@@ -1,7 +1,6 @@
 package com.example.multimodule.domain
 
 import com.example.multimodule.data.GithubRepository
-import com.example.multimodule.data.github.response.toEntities
 import com.example.multimodule.domain.entity.GithubEntity
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -17,7 +16,14 @@ class GetGithubRepositoryUseCase(
         owner?.let {
             githubRepository.getRepos(it)
                 .map { responseList ->
-                    responseList.toEntities()
+                    responseList.map { response ->
+                        GithubEntity(
+                            name = response.name ?: "",
+                            id = response.id ?: "",
+                            date = response.date ?: "",
+                            url = response.url ?: ""
+                        )
+                    }
                 }
         } ?: flow {
             throw Exception()

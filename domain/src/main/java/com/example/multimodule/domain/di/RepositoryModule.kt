@@ -1,4 +1,4 @@
-package com.example.multimodule.di
+package com.example.multimodule.domain.di
 
 import com.example.multimodule.data.GithubRepository
 import com.example.multimodule.data.github.GithubService

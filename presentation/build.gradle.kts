@@ -58,4 +58,7 @@ dependencies {
     implementation(Libraries.HILT_ANDROID)
     kapt(Libraries.HILT_COMPILER)
     kapt(Libraries.HILT_COMPILER_ANDROID_X)
+
+    implementation(Libraries.COIL)
+    implementation(Libraries.COIL_GIF)
 }

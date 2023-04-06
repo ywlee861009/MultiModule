@@ -15,6 +15,8 @@ object Versions {
 
     const val HILT = "2.44"
     const val HILT_COMPILER = "1.0.0"
+
+    const val COIL = "2.3.0"
 }
 
 object Libraries {
@@ -36,6 +38,9 @@ object Libraries {
     const val HILT_ANDROID = "com.google.dagger:hilt-android:${Versions.HILT}"
     const val HILT_COMPILER = "com.google.dagger:hilt-compiler:${Versions.HILT}"
     const val HILT_COMPILER_ANDROID_X = "androidx.hilt:hilt-compiler:${Versions.HILT_COMPILER}"
+
+    const val COIL = "io.coil-kt:coil:${Versions.COIL}"
+    const val COIL_GIF = "io.coil-kt:coil-gif:${Versions.COIL}"
 }
 
 object ClassPath {

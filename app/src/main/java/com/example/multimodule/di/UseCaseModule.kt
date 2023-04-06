@@ -1,6 +1,6 @@
 package com.example.multimodule.di
 
-import com.example.multimodule.data.GithubRepository
+import com.example.multimodule.data.github.GithubRepository
 import com.example.multimodule.domain.GetGithubRepositoryUseCase
 import dagger.Module
 import dagger.Provides

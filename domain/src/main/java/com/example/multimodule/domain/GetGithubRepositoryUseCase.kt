@@ -1,6 +1,6 @@
 package com.example.multimodule.domain
 
-import com.example.multimodule.data.GithubRepository
+import com.example.multimodule.data.github.GithubRepository
 import com.example.multimodule.domain.entity.GithubEntity
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

@@ -1,9 +1,8 @@
-package com.example.multimodule.feature.main.adapter.holder
+package com.example.multimodule.presentation.main.adapter.holder
 
 import androidx.recyclerview.widget.RecyclerView
-import com.example.multimodule.data.github.response.GithubResponse
-import com.example.multimodule.databinding.ItemRowBinding
 import com.example.multimodule.domain.entity.GithubEntity
+import com.example.multimodule.presentation.databinding.ItemRowBinding
 
 /**
  * github holder

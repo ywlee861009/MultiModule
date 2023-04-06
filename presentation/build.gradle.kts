@@ -1,28 +1,29 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
 }
 
 android {
-    namespace= "com.example.multimodule"
+    namespace = "com.example.multimodule.presentation"
     compileSdk = AppConfig.COMPILE_SDK
 
     defaultConfig {
-        applicationId = "com.example.multimodule"
         minSdk = AppConfig.MIN_SDK
         targetSdk = AppConfig.TARGET_SDK
-        versionCode = AppConfig.VERSION_CODE
-        versionName = AppConfig.VERSION_NAME
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
     compileOptions {
@@ -31,9 +32,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
-    }
-    kapt {
-        correctErrorTypes = true
     }
     dataBinding {
         enable = true
@@ -47,7 +45,6 @@ dependencies {
     implementation(Libraries.APP_COMPAT)
     implementation(Libraries.MATERIAL)
     implementation(Libraries.CONSTRAINT_LAYOUT)
-    implementation(project(mapOf("path" to ":presentation")))
     implementation(project(mapOf("path" to ":data")))
     implementation(project(mapOf("path" to ":domain")))
     testImplementation(Libraries.J_UNIT)

@@ -1,4 +1,4 @@
-package com.example.multimodule.feature.main
+package com.example.multimodule.presentation.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -1,4 +1,4 @@
-package com.example.multimodule.feature.main.adapter
+package com.example.multimodule.presentation.main.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,10 +6,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.multimodule.feature.main.adapter.holder.GithubHolder
-import com.example.multimodule.data.github.response.GithubResponse
-import com.example.multimodule.R
+import com.example.multimodule.presentation.main.adapter.holder.GithubHolder
 import com.example.multimodule.domain.entity.GithubEntity
+import com.example.multimodule.presentation.R
 
 /**
  * Github repo adapter

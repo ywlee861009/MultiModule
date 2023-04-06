@@ -32,7 +32,7 @@ class MainViewModel @Inject constructor(
      */
     fun getRepo() {
         viewModelScope.launch {
-            getGithubRepositoryUseCase.getRepo("ywlee861009")
+            getGithubRepositoryUseCase("ywlee861009")
                 .catch {t ->
                     _error.postValue(t.toString())
                 }

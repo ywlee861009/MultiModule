@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.map
 class GetGithubRepositoryUseCase(
     private val githubRepository: GithubRepository
 ) {
-    suspend fun getRepo(owner: String?): Flow<List<GithubEntity>> =
+    suspend operator fun invoke(owner: String?): Flow<List<GithubEntity>> =
         owner?.let {
             githubRepository.getRepos(it)
                 .map { responseList ->

@@ -1,8 +1,8 @@
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
-    id("kotlin-kapt")
-    id("dagger.hilt.android.plugin")
+    id(PlugIn.LIBRARY)
+    id(PlugIn.ANDROID)
+    id(PlugIn.KAPT)
+    id(PlugIn.HILT)
 }
 
 android {

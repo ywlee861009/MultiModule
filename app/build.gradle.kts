@@ -1,8 +1,8 @@
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-    id("kotlin-kapt")
-    id("dagger.hilt.android.plugin")
+    id(PlugIn.APPLICATION)
+    id(PlugIn.ANDROID)
+    id(PlugIn.KAPT)
+    id(PlugIn.HILT)
 }
 
 android {
@@ -34,9 +34,6 @@ android {
     }
     kapt {
         correctErrorTypes = true
-    }
-    dataBinding {
-        enable = true
     }
 }
 

@@ -1,5 +1,7 @@
 package com.example.multimodule.presentation.main
 
+import android.content.Intent
+import android.graphics.Color
 import android.os.Build.VERSION.SDK_INT
 import android.os.Bundle
 import android.widget.Toast
@@ -12,9 +14,11 @@ import coil.ImageLoader
 import coil.decode.GifDecoder
 import coil.decode.ImageDecoderDecoder
 import coil.load
+import coil.transform.CircleCropTransformation
 import com.example.multimodule.presentation.R
 import com.example.multimodule.presentation.databinding.ActivityMainBinding
 import com.example.multimodule.presentation.main.adapter.GithubAdapter
+import com.example.multimodule.presentation.test.TestActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 /**
@@ -58,6 +62,10 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.repos.observe(this) {
             (binding.recyclerView.adapter as? GithubAdapter)?.submitList(it)
+        }
+
+        binding.btnGoTest.setOnClickListener {
+            startActivity(Intent(this, TestActivity::class.java))
         }
     }
 }

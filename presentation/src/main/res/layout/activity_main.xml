@@ -24,5 +24,12 @@
             android:visibility="gone"
             android:layout_gravity="center" />
 
+        <Button
+            android:id="@+id/btn_go_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="테스트 액티비티"/>
+
     </FrameLayout>
 </layout>

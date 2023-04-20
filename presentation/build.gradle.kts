@@ -61,4 +61,6 @@ dependencies {
 
     implementation(Libraries.COIL)
     implementation(Libraries.COIL_GIF)
+
+    implementation(Libraries.EXPANDABLE_LAYOUT)
 }

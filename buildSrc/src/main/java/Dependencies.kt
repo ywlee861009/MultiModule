@@ -17,6 +17,8 @@ object Versions {
     const val HILT_COMPILER = "1.0.0"
 
     const val COIL = "2.3.0"
+
+    const val EXPANDABLE_LAYOUT = "1.0.7"
 }
 
 object Libraries {
@@ -41,6 +43,8 @@ object Libraries {
 
     const val COIL = "io.coil-kt:coil:${Versions.COIL}"
     const val COIL_GIF = "io.coil-kt:coil-gif:${Versions.COIL}"
+
+    const val EXPANDABLE_LAYOUT = "com.github.skydoves:expandablelayout:${Versions.EXPANDABLE_LAYOUT}"
 }
 
 object ClassPath {

@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil
 import coil.load
 import com.example.multimodule.presentation.R
 import com.example.multimodule.presentation.databinding.ActivityTestBinding
+import com.example.multimodule.presentation.test.adapter.TestAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -16,16 +17,18 @@ class TestActivity: AppCompatActivity() {
         DataBindingUtil.setContentView(this, R.layout.activity_test)
     }
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding.ivCircle.load("https://picsum.photos/200")
-        binding.ivCircle.setOnClickListener {
-            if (binding.ivCircle.strokeWidth == 0f) {
-                binding.ivCircle.strokeWidth = 20f
-            } else {
-                binding.ivCircle.strokeWidth = 0f
+        binding.rvContents.adapter = TestAdapter().apply {
+
+            val list = mutableListOf<String>()
+            for (i in 0 .. 20) {
+                list.add(i.toString())
             }
+
+            submitList(list)
         }
     }
 }

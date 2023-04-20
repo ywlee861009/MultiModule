@@ -3,4 +3,12 @@
     <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
         <item name="cornerSize">50%</item>
     </style>
+
+
+    <declare-styleable name="ExpandableCardView">
+        <attr format="enum" name="type">
+            <enum name="parent" value="0" />
+            <enum name="child" value="1" />
+        </attr>
+    </declare-styleable>
 </resources>
